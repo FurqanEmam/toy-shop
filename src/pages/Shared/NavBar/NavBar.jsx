@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
   return (
     <div className="max-w-7xl mx-auto">
@@ -25,21 +27,20 @@ const NavBar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
             >
               <li>
-                <a>Item 1</a>
+                <Link to="/">Home</Link>
+              </li>
+
+              <li>
+                <a>All Toys</a>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <a>Blogs</a>
               </li>
               <li>
-                <a>Item 3</a>
+                <a>My Toys</a>
+              </li>
+              <li>
+                <a>Add A Toys</a>
               </li>
             </ul>
           </div>
@@ -48,7 +49,7 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold text-xl">
             <li>
-              <a>Home</a>
+              <Link to="/">Home</Link>
             </li>
 
             <li>
@@ -67,14 +68,9 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-end">
-          <div className="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              className=" input input-bordered w-24 md:w-auto"
-            />
-          </div>
-          <a className="btn ms-3  ">Sign Up/Login</a>
+          <Link to="/login" className="btn ms-3  ">
+            Sign Up/Login
+          </Link>
         </div>
       </div>
     </div>
