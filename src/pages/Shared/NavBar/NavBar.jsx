@@ -1,7 +1,7 @@
 const NavBar = () => {
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="max-w-7xl mx-auto">
+      <div className="navbar pt-4 pb-4">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
             >
               <li>
                 <a>Item 1</a>
@@ -43,28 +43,25 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">PlayHive</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 font-bold text-xl">
             <li>
-              <a>Item 1</a>
+              <a>Home</a>
+            </li>
+
+            <li>
+              <a>All Toys</a>
             </li>
             <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <a>Blogs</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>My Toys</a>
+            </li>
+            <li>
+              <a>Add A Toys</a>
             </li>
           </ul>
         </div>

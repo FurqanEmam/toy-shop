@@ -5,8 +5,13 @@ import Footer from "../pages/Shared/Footer/Footer";
 const Main = () => {
   return (
     <div>
-      <NavBar></NavBar>
-      <Outlet></Outlet>
+      <div className="bg-[#FF8911]">
+        <NavBar></NavBar>
+      </div>
+      <div>
+        <Outlet></Outlet>
+      </div>
+
       <Footer></Footer>
     </div>
   );
