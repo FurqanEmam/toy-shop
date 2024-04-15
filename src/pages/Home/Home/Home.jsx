@@ -1,3 +1,4 @@
+import Category from "../Category/Category";
 import GridGallery from "../Gallery/GridGallery";
 import MyGallery from "../Gallery/MyGallery";
 
@@ -10,6 +11,7 @@ const Home = () => {
       <GridGallery></GridGallery>
       {/* <Product></Product>
       <Product></Product> */}
+      <Category></Category>
     </div>
   );
 };

@@ -1,34 +1,42 @@
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+
+/*
+ https://i.ibb.co/74GfKBS/Baby-Jeep-888.jpg
+https://i.ibb.co/mNgWSw8/car-808-2.jpg
+https://i.ibb.co/k9Vx1WM/IMG-20230526-161351.jpg
+https://i.ibb.co/3C1RtJg/lamborghini-2.jpg
+https://i.ibb.co/H7K7Dck/Rools-Roys.jpg
+ */
 
 const Category = () => {
   return (
-    <div>
+    <div className="max-w-6xl mx-auto mt-5">
       <Tabs forceRenderTabPanel defaultIndex={1}>
         <TabList>
-          <Tab>The Simpsons</Tab>
-          <Tab>Futurama</Tab>
+          <Tab>Electric Cars</Tab>
+          <Tab>Electric Bikes</Tab>
+          <Tab>Cars</Tab>
         </TabList>
         <TabPanel>
           <Tabs forceRenderTabPanel>
             <TabList>
-              <Tab>Homer Simpson</Tab>
-              <Tab>Marge Simpson</Tab>
-              <Tab>Bart Simpson</Tab>
-              <Tab>Lisa Simpson</Tab>
-              <Tab>Maggie Simpson</Tab>
+              <Tab>Two Seated Cars</Tab>
+              <Tab>Mini Cars</Tab>
+              <Tab>Cars for Baby</Tab>
             </TabList>
             <TabPanel>
               <p>Husband of Marge; father of Bart, Lisa, and Maggie.</p>
               <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Homer_Simpson_2006.png/212px-Homer_Simpson_2006.png"
+                src="https://i.ibb.co/74GfKBS/Baby-Jeep-888.jpg"
                 alt="Homer Simpson"
               />
             </TabPanel>
             <TabPanel>
               <p>Wife of Homer; mother of Bart, Lisa, and Maggie.</p>
               <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Marge_Simpson.png/220px-Marge_Simpson.png"
+                src="https://i.ibb.co/mNgWSw8/car-808-2.jpg"
                 alt="Marge Simpson"
               />
             </TabPanel>
@@ -38,7 +46,7 @@ const Category = () => {
                 and Maggie.
               </p>
               <img
-                src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png"
+                src="https://i.ibb.co/k9Vx1WM/IMG-20230526-161351.jpg"
                 alt="Bart Simpson"
               />
             </TabPanel>
