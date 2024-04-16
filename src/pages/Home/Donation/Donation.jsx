@@ -10,7 +10,7 @@ const Donation = () => {
             "url(https://plus.unsplash.com/premium_photo-1682000249474-99a12b338218?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
         }}
       >
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-overlay bg-opacity-80"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-lg">
             <h1 className="mb-5 text-5xl font-bold">
@@ -27,7 +27,25 @@ const Donation = () => {
               make a meaningful impact and empower hope in the lives of those
               who need it most."
             </p>
-            <button className="btn btn-outline btn-info">Donate</button>
+            <div>
+              <div className="stats bg-blue-500 bg-opacity-50 text-primary-content">
+                <div className="stat">
+                  <div className="stat-title text-slate-100">Total Donated</div>
+                  <div className="stat-value">$100000</div>
+                </div>
+
+                <div className="stat">
+                  <div className="stat-title text-stone-100">New Donation</div>
+                  <div className="stat-value">$89,400</div>
+                  <div className="stat-actions">
+                    <button className="btn btn-sm">See Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button className="btn btn-outline btn-info mt-8">
+              Donate & Save A Life
+            </button>
           </div>
         </div>
       </div>
