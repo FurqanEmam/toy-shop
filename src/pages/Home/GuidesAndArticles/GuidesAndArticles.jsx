@@ -8,7 +8,7 @@ const GuidesAndArticles = () => {
           How-To Guides & Articles
         </h2>
       </div>
-      <div className="flex">
+      <div className="lg:flex">
         <div className="card lg:card-side bg-base-100 shadow-xl">
           <figure className="max-w-xl">
             <img
