@@ -1,6 +1,8 @@
 import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { IoIosStar, IoIosStarOutline } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 /*
  https://i.ibb.co/74GfKBS/Baby-Jeep-888.jpg
@@ -11,6 +13,23 @@ https://i.ibb.co/H7K7Dck/Rools-Roys.jpg
  */
 
 const Category = () => {
+  const images = {
+    img1: "https://www.outdoortoys.com/cdn/shop/products/licensed-audi-rs-e-tron-gt-kids-electric-12v-ride-on-car-blue-413794_1600x.jpg?v=1691140452",
+    img2: "https://www.outdoortoys.com/cdn/shop/products/licensed-lamborghini-urus-12v-ride-on-childrens-electric-suv-937544_1600x.jpg?v=1691140526",
+    img3: "https://kidscarsales.com.au/cdn/shop/products/MJMRed_1800x1800.jpg?v=1600172269",
+    img4: "https://kidscarsales.com.au/cdn/shop/products/MJMBlue_76b238bd-cecb-4e8a-8300-bd983b1d37e3_1800x1800.jpg?v=1683081989",
+    img5: "https://kidscarsales.com.au/cdn/shop/files/RigoKidsElectricRideOnCarOffRoadJeepRemote12VRed-1_1800x1800.png?v=1707269218",
+    img6: "https://kidscarsales.com.au/cdn/shop/files/Rigo-Kids-Electric-Ride-On-Car-Off-Road-Jeep-Remote-12V-Blue-5_1800x1800.png?v=1707275240",
+    img7: "https://kidscarsales.com.au/cdn/shop/files/Rigo-Kids-Electric-12v-Police-Patrol-3-Wheel-Ride-On-Motorbike_1_1800x1800.png?v=1707450811",
+    img8: "https://kidscarsales.com.au/cdn/shop/products/RCAR-MBIKE-POLICE-WH-00_1800x1800.jpg?v=1702551550",
+    img9: "https://kidscarsales.com.au/cdn/shop/products/DBBlue_e5417934-4035-4a44-baf0-e0ca82aec687_1800x1800.jpg?v=1627947217",
+    img10:
+      "https://kidscarsales.com.au/cdn/shop/products/DBOrange_eabd6aa8-f252-43d0-b4ba-ddc3ecfb4f62_1800x1800.jpg?v=1602748378",
+    img11:
+      "https://kidscarsales.com.au/cdn/shop/files/kid-riding-on--motorcycle-125cc-Dirt-Bike-on-the-road_c9ea564a-d5fa-42d9-bcdd-f4d88f3321e8_1800x1800.png?v=1698213977",
+    img12:
+      "https://kidscarsales.com.au/cdn/shop/products/blue_cfaa9f3e-e19a-4cd9-97ac-59e337fdfb05_1800x1800.jpg?v=1626929588",
+  };
   return (
     <div className="max-w-6xl mx-auto mt-5">
       <Tabs forceRenderTabPanel defaultIndex={1}>
@@ -23,121 +42,476 @@ const Category = () => {
           <Tabs forceRenderTabPanel>
             <TabList>
               <Tab>Two Seated Cars</Tab>
-              <Tab>Mini Cars</Tab>
-              <Tab>Cars for Baby</Tab>
+              <Tab>ATV</Tab>
+              <Tab>Off Road Cars</Tab>
             </TabList>
             <TabPanel>
-              <p>Husband of Marge; father of Bart, Lisa, and Maggie.</p>
-              <img
-                src="https://i.ibb.co/74GfKBS/Baby-Jeep-888.jpg"
-                alt="Homer Simpson"
-              />
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img src={images.img1} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Two Seated Blue Audi car</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure>
+                  <img src={images.img2} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Lamborghini car</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
             <TabPanel>
-              <p>Wife of Homer; mother of Bart, Lisa, and Maggie.</p>
-              <img
-                src="https://i.ibb.co/mNgWSw8/car-808-2.jpg"
-                alt="Marge Simpson"
-              />
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure className="max-w-xl">
+                  <img src={images.img3} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">ATV Red</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure className="max-w-xl">
+                  <img src={images.img4} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">ATV Blue</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
             <TabPanel>
-              <p>
-                Oldest child and only son of Homer and Marge; brother of Lisa
-                and Maggie.
-              </p>
-              <img
-                src="https://i.ibb.co/k9Vx1WM/IMG-20230526-161351.jpg"
-                alt="Bart Simpson"
-              />
-            </TabPanel>
-            <TabPanel>
-              <p>
-                Middle child and eldest daughter of Homer and Marge; sister of
-                Bart and Maggie.
-              </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Lisa_Simpson.png/200px-Lisa_Simpson.png"
-                alt="Lisa Simpson"
-              />
-            </TabPanel>
-            <TabPanel>
-              <p>
-                Youngest child and daughter of Homer and Marge; sister of Bart
-                and Lisa.
-              </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Maggie_Simpson.png/223px-Maggie_Simpson.png"
-                alt="Maggie Simpson"
-              />
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img src={images.img5} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Off Road Red JEEP</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure>
+                  <img src={images.img6} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Off Road Blue Jeep</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
           </Tabs>
         </TabPanel>
         <TabPanel>
           <Tabs forceRenderTabPanel>
             <TabList>
-              <Tab>Philip J. Fry</Tab>
-              <Tab>Turanga Leela</Tab>
-              <Tab>Bender Bending Rodriguez</Tab>
-              <Tab>Amy Wong</Tab>
-              <Tab>Professor Hubert J. Farnsworth</Tab>
-              <Tab>Doctor John Zoidberg</Tab>
+              <Tab>Kids Police Bikes</Tab>
+              <Tab>Dirt Bike</Tab>
+              <Tab>Auto Bikes</Tab>
             </TabList>
             <TabPanel>
-              <p>
-                Protagonist, from the 20th Century. Delivery boy. Many times
-                great-uncle to Professor Hubert Farnsworth. Suitor of Leela.
-              </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Philip_Fry.png/175px-Philip_Fry.png"
-                alt="Philip J. Fry"
-              />
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure className="max-w-2xl">
+                  <img src={images.img7} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Police Bike</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure className="max-w-2xl">
+                  <img src={images.img8} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Police Bike Blue</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
             <TabPanel>
-              <p>
-                Mutant cyclops. Captain of the Planet Express Ship. Love
-                interest of Fry.
-              </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Turanga_Leela.png/150px-Turanga_Leela.png"
-                alt="Turanga Leela"
-              />
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure className="max-w-xl">
+                  <img src={images.img9} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Ducati Dirt Bike Blue</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure className="max-w-xl">
+                  <img src={images.img10} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Ducati Dirt Bike Red</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
             <TabPanel>
-              <p>
-                A kleptomaniacal, lazy, cigar-smoking, heavy-drinking robot who
-                is Fry's best friend. Built in Tijuana, Mexico, he is the Planet
-                Express Ship's cook.
-              </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Bender_Rodriguez.png/220px-Bender_Rodriguez.png"
-                alt="Bender Bending Rodriguez"
-              />
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img src={images.img11} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Auto Dirt Bikes</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure>
+                  <img src={images.img12} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Auto Dirt Bikes</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </TabPanel>
+          </Tabs>
+        </TabPanel>
+        <TabPanel>
+          <Tabs forceRenderTabPanel>
+            <TabList>
+              <Tab>Two Seated Cars</Tab>
+              <Tab>ATV</Tab>
+              <Tab>Off Road Cars</Tab>
+            </TabList>
+            <TabPanel>
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img src={images.img1} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Two Seated Blue Audi car</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure>
+                  <img src={images.img2} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Lamborghini car</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
             <TabPanel>
-              <p>
-                Chinese-Martian intern at Planet Express. Fonfon Ru of Kif
-                Kroker.
-              </p>
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure className="max-w-xl">
+                  <img src={images.img3} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">ATV Red</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure className="max-w-xl">
+                  <img src={images.img4} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">ATV Blue</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
             <TabPanel>
-              <p>
-                Many times great-nephew of Fry. CEO and owner of Planet Express
-                delivery company. Tenured professor of Mars University.
-              </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/FuturamaProfessorFarnsworth.png/175px-FuturamaProfessorFarnsworth.png"
-                alt="Professor Hubert J. Farnsworth"
-              />
-            </TabPanel>
-            <TabPanel>
-              <p>
-                Alien from Decapod 10. Planet Express' staff doctor and steward.
-                Has a medical degree and Ph.D in art history.
-              </p>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Dr_John_Zoidberg.png/200px-Dr_John_Zoidberg.png"
-                alt="Doctor John Zoidberg"
-              />
+              <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img src={images.img5} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Off Road Red JEEP</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card lg:card-side bg-base-100 shadow-xl mt-4">
+                <figure>
+                  <img src={images.img6} alt="Album" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Off Road Blue Jeep</h2>
+                  <p>Price: $1200</p>
+                  <p>
+                    Rating:{" "}
+                    <span className="flex">
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStar />
+                      <IoIosStarOutline />
+                    </span>
+                  </p>
+                  <div className="card-actions justify-end">
+                    <Link to="/mytoys" className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </TabPanel>
           </Tabs>
         </TabPanel>
