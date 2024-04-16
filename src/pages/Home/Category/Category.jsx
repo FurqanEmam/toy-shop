@@ -32,6 +32,9 @@ const Category = () => {
   };
   return (
     <div className="max-w-6xl mx-auto mt-5">
+      <h2 className="text-5xl font-bold mb-5 bg-slate-100 h-14 text-center">
+        Cars Category
+      </h2>
       <Tabs forceRenderTabPanel defaultIndex={1}>
         <TabList>
           <Tab>Electric Cars</Tab>
@@ -52,7 +55,12 @@ const Category = () => {
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">Two Seated Blue Audi car</h2>
+
                   <p>Price: $1200</p>
+                  <p>
+                    Officially Licensed Audi TT RS Roadster Licensed Black 12v
+                    Ride-On Kids Car for Ages 3-8
+                  </p>
                   <p>
                     Rating:{" "}
                     <span className="flex">
@@ -77,6 +85,11 @@ const Category = () => {
                 <div className="card-body">
                   <h2 className="card-title">Lamborghini car</h2>
                   <p>Price: $1200</p>
+                  <p>
+                    Licensed Lamborghini Aventador SVJ Electric Kids Car 12v
+                    Power With Bluetooth Parental Remote Control, Plush Leather
+                    Seats & EVA Noise Reduction Tyres - Green
+                  </p>
                   <p>
                     Rating:{" "}
                     <span className="flex">
@@ -212,6 +225,17 @@ const Category = () => {
                 <div className="card-body">
                   <h2 className="card-title">Police Bike</h2>
                   <p>Price: $1200</p>
+                  <p>
+                    Your little one will have lots of fun cruising the park or
+                    neighbourhood on this motorbike looking for criminals.
+                    Realistically looking, this motorbike has a white, high
+                    gloss finish and is decorated with stylish decals. It is
+                    also equipped with numerous flashing lights that your kid
+                    can turn on as they chase down their suspect. Fun for ages
+                    3-8, this ride on toy is easy to operate. Using hand and
+                    footstep controls, they can go forward and backwards at
+                    speeds of 4-7kph.{" "}
+                  </p>
                   <p>
                     Rating:{" "}
                     <span className="flex">
