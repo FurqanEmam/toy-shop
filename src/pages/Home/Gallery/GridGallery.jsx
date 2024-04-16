@@ -13,6 +13,9 @@ const images = [
   "https://i.ibb.co/YtmWmXK/img-11.jpg",
   // Add more image URLs as needed
   "https://picsum.photos/300/300?image=206",
+  "https://i.ibb.co/Wt6qCJ7/car-kid.jpg",
+  "https://i.ibb.co/rF76gj0/istockphoto-155421275-1024x1024.jpg",
+  "https://i.ibb.co/yfs4cBn/istockphoto-900683944-2048x2048.jpg",
 ];
 
 const GridGallery = () => {
