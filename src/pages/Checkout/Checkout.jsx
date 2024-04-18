@@ -39,30 +39,32 @@ const Checkout = () => {
       },
       body: JSON.stringify(newOrder),
     })
-      .then((res) => res.json)
+      .then((res) => res.json())
       .then((data) => {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Your Toy added to your cart",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        if (data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your Toy added to your cart",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       });
   };
 
   return (
     <div>
       <div className="hero min-h-screen bg-gradient-to-r from-blue-400 via-white-500 to-green-500">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content flex-col ">
           <div className="text-center lg:text-left text-white">
-            <h1 className="text-5xl font-bold">Checkout</h1>
+            <h1 className="text-5xl font-bold text-center">Checkout</h1>
             <p className="py-6">
               Please enter your shipping and payment information to complete
               your purchase.
             </p>
           </div>
-          <div className="card m-4 lg:m-0 w-full max-w-md shadow-lg bg-white rounded-lg">
+          <div className="card m-4 lg:m-0 w-full max-w-md shadow-lg bg-white rounded-lg ">
             <form onSubmit={handleCheckOut} className="card-body p-6">
               <div className="form-control">
                 <label className="label">
