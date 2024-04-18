@@ -15,7 +15,7 @@ const AllToys = () => {
       <h2 className="text-center text-6xl font-bold">
         Toys Your kid will love to use
       </h2>
-      <div className="lg:flex flex-wrap mt-7 gap-4">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 mt-7">
         {products.map((product) => (
           <ToysCard key={products._id} product={product}></ToysCard>
         ))}

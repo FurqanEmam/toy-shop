@@ -25,7 +25,7 @@ const ToysDetails = () => {
             <p>Category: {sub_category}</p>
             <p>In Stock: {available_quantity}pcs</p>
             <p>Price: ${price}</p>
-            <Link>
+            <Link to={`/checkout/${_id}`}>
               <button className="btn btn-outline">Buy Now</button>
             </Link>
           </div>

@@ -1,6 +1,56 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
+  const toyCheckOut = useLoaderData();
+  const { _id, toy_name, price, image_url } = toyCheckOut;
+  // console.log(toyCheckOut);
+  const { user } = useContext(AuthContext);
+  // console.log(user);
+
+  const handleCheckOut = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const address = form.address.value;
+    const email = user?.email;
+    const card = form.cardNumber.value;
+    const expDate = form.expDate.value;
+    const cvv = form.cvv.value;
+    const newOrder = {
+      customerName: name,
+      email,
+      soldToyId: _id,
+      soldToyName: toy_name,
+      price: price,
+      card,
+      expDate,
+      cvv,
+      address,
+      image_url,
+    };
+    console.log(newOrder);
+    fetch("http://localhost:5000/newsoldtoy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newOrder),
+    })
+      .then((res) => res.json)
+      .then((data) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your Toy added to your cart",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+  };
+
   return (
     <div>
       <div className="hero min-h-screen bg-gradient-to-r from-blue-400 via-white-500 to-green-500">
@@ -13,13 +63,15 @@ const Checkout = () => {
             </p>
           </div>
           <div className="card m-4 lg:m-0 w-full max-w-md shadow-lg bg-white rounded-lg">
-            <form className="card-body p-6">
+            <form onSubmit={handleCheckOut} className="card-body p-6">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Full Name</span>
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  defaultValue={user?.displayName}
                   placeholder="John Doe"
                   className="input input-bordered w-full"
                   required
@@ -31,7 +83,32 @@ const Checkout = () => {
                 </label>
                 <input
                   type="email"
-                  placeholder="email@example.com"
+                  name="email"
+                  defaultValue={user?.email}
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Toy Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="toyName"
+                  defaultValue={toy_name}
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Price</span>
+                </label>
+                <input
+                  type="text"
+                  name="price"
+                  defaultValue={"$" + price}
                   className="input input-bordered w-full"
                   required
                 />
@@ -42,6 +119,7 @@ const Checkout = () => {
                 </label>
                 <input
                   type="text"
+                  name="address"
                   placeholder="123 Street Name"
                   className="input input-bordered w-full"
                   required
@@ -54,6 +132,7 @@ const Checkout = () => {
                   </label>
                   <input
                     type="text"
+                    name="cardNumber"
                     placeholder="1234 5678 9012 3456"
                     className="input input-bordered"
                     required
@@ -65,6 +144,7 @@ const Checkout = () => {
                   </label>
                   <input
                     type="text"
+                    name="expDate"
                     placeholder="MM/YY"
                     className="input input-bordered"
                     required
@@ -77,15 +157,18 @@ const Checkout = () => {
                 </label>
                 <input
                   type="text"
+                  name="cvv"
                   placeholder="123"
                   className="input input-bordered w-20"
                   required
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary w-full py-3">
-                  Complete Purchase
-                </button>
+                <input
+                  type="submit"
+                  value="Complete Purchase"
+                  className="btn btn-primary btn-block"
+                />
               </div>
             </form>
           </div>
