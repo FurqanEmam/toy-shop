@@ -1,6 +1,39 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProviders";
+import { SlLogout } from "react-icons/sl";
+import { CiLogin } from "react-icons/ci";
 
 const NavBar = () => {
+  const { user, logout } = useContext(AuthContext);
+
+  const navItems = (
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+
+      <li>
+        <Link to="/alltoys">All Toys</Link>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
+      </li>
+      <li>
+        <a>My Toys</a>
+      </li>
+      <li>
+        <a>Add A Toys</a>
+      </li>
+    </>
+  );
+
+  const handleLogOut = () => {
+    logout()
+      .then()
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="max-w-7xl mx-auto">
       <div className="navbar pt-4 pb-4">
@@ -26,51 +59,35 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
             >
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-
-              <li>
-                <Link to="/alltoys">All Toys</Link>
-              </li>
-              <li>
-                <a>Blogs</a>
-              </li>
-              <li>
-                <a>My Toys</a>
-              </li>
-              <li>
-                <a>Add A Toys</a>
-              </li>
+              {navItems}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">PlayHive</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold text-xl">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-
-            <li>
-              <Link to="/alltoys">All Toys</Link>
-            </li>
-            <li>
-              <a>Blogs</a>
-            </li>
-            <li>
-              <a>My Toys</a>
-            </li>
-            <li>
-              <a>Add A Toys</a>
-            </li>
+            {navItems}
           </ul>
         </div>
 
         <div className="navbar-end">
-          <Link to="/login" className="btn ms-3  ">
-            Sign Up/Login
-          </Link>
+          {user?.email ? (
+            <>
+              <div>
+                <SlLogout />
+              </div>
+              <button onClick={handleLogOut} className="btn ms-3  ">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="btn ms-3  ">
+                <CiLogin />
+                Login
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
