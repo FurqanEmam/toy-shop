@@ -27,9 +27,9 @@ const Cart = () => {
                   <input type="checkbox" className="checkbox" />
                 </label>
               </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Customer Name</th>
+              <th>Toy Name</th>
+              <th>Price</th>
               <th></th>
             </tr>
           </thead>

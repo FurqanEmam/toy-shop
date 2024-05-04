@@ -1,7 +1,8 @@
 import React from "react";
 
 const MyCart = ({ mycart }) => {
-  const { customerName, email, price, image_url } = mycart;
+  const { customerName, email, price, image_url, address, soldToyName } =
+    mycart;
 
   return (
     <tr>
@@ -14,26 +15,20 @@ const MyCart = ({ mycart }) => {
         <div className="flex items-center gap-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img
-                src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png"
-                alt="Avatar Tailwind CSS Component"
-              />
+              <img src={image_url} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
           <div>
-            <div className="font-bold">Hart Hagerty</div>
-            <div className="text-sm opacity-50">United States</div>
+            <div className="font-bold">{customerName}</div>
+            <div className="text-sm opacity-50">{email}</div>
           </div>
         </div>
       </td>
       <td>
-        Zemlak, Daniel and Leannon
+        {soldToyName}
         <br />
-        <span className="badge badge-ghost badge-sm">
-          Desktop Support Technician
-        </span>
       </td>
-      <td>Purple</td>
+      <td>${price}</td>
       <th>
         <button className="btn btn-ghost btn-xs">details</button>
       </th>
