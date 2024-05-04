@@ -7,6 +7,7 @@ import AllToys from "../pages/AllToys/AllToys";
 import ToysDetails from "../pages/ToysDetails/ToysDetails";
 import Checkout from "../pages/Checkout/Checkout";
 import Cart from "../pages/Cart/Cart";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+
       {
         path: "/login",
         element: <Login></Login>,
@@ -37,7 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <Cart></Cart>,
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "checkout/:id",
