@@ -1,8 +1,16 @@
 import React from "react";
 
-const MyCart = ({ mycart, handleDelete }) => {
-  const { _id, customerName, email, price, image_url, address, soldToyName } =
-    mycart;
+const MyCart = ({ mycart, handleDelete, handleConfirm }) => {
+  const {
+    _id,
+    customerName,
+    email,
+    price,
+    image_url,
+    address,
+    soldToyName,
+    status,
+  } = mycart;
 
   return (
     <tr>
@@ -46,7 +54,16 @@ const MyCart = ({ mycart, handleDelete }) => {
       </td>
       <td>${price}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        {status === "confirm" ? (
+          <span>Confirmed</span>
+        ) : (
+          <button
+            onClick={() => handleConfirm(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Confirm
+          </button>
+        )}
       </th>
     </tr>
   );

@@ -33,6 +33,28 @@ const Cart = () => {
     }
   };
 
+  const handleConfirm = (id) => {
+    fetch(`http://localhost:5000/newsoldtoy/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "confirm" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          // update state
+          const remaining = cart.filter((cartData) => cartData._id !== id);
+          const updated = cart.find((cartData) => cartData._id === id);
+          updated.status = "confirm";
+          const newSoldToy = [updated, ...remaining];
+          setCart(newSoldToy);
+        }
+      });
+  };
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -56,6 +78,7 @@ const Cart = () => {
                 key={mycart._id}
                 mycart={mycart}
                 handleDelete={handleDelete}
+                handleConfirm={handleConfirm}
               ></MyCart>
             ))}
           </tbody>
