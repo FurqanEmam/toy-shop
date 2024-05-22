@@ -15,6 +15,24 @@ const Cart = () => {
       .then((data) => setCart(data));
   }, []);
 
+  const handleDelete = (id) => {
+    const proceed = confirm("sure to delete");
+    if (proceed) {
+      fetch(`http://localhost:5000/newsoldtoy/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted successfull");
+            const remaining = cart.filter((cartData) => cartData._id !== id);
+            setCart(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -30,12 +48,15 @@ const Cart = () => {
               <th>Customer Name</th>
               <th>Toy Name</th>
               <th>Price</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
             {cart.map((mycart) => (
-              <MyCart key={mycart._id} mycart={mycart}></MyCart>
+              <MyCart
+                key={mycart._id}
+                mycart={mycart}
+                handleDelete={handleDelete}
+              ></MyCart>
             ))}
           </tbody>
         </table>
