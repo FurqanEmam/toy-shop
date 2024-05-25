@@ -72,7 +72,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -101,7 +101,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -127,7 +127,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -151,7 +151,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -177,7 +177,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -201,7 +201,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -247,7 +247,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -271,7 +271,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -297,7 +297,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -321,7 +321,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -347,7 +347,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -371,7 +371,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -406,7 +406,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -430,7 +430,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -456,7 +456,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -480,7 +480,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -506,7 +506,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>
@@ -530,7 +530,7 @@ const Category = () => {
                     </span>
                   </p>
                   <div className="card-actions justify-end">
-                    <Link to="/mytoys" className="btn btn-primary">
+                    <Link to="/alltoys" className="btn btn-primary">
                       View Details
                     </Link>
                   </div>

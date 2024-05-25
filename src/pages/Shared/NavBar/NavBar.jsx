@@ -12,13 +12,13 @@ const NavBar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-
-      <li>
-        <Link to="/alltoys">All Toys</Link>
-      </li>
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
+      <li>
+        <Link to="/alltoys">All Toys</Link>
+      </li>
+
       {user?.email ? (
         <>
           <div>
@@ -30,15 +30,12 @@ const NavBar = () => {
       ) : (
         <></>
       )}
-      <li>
-        <a>Add A Toys</a>
-      </li>
     </>
   );
 
   const handleLogOut = () => {
     logout()
-      .then()
+      .then(localStorage.removeItem("playhive-access-token"))
       .catch((error) => console.log(error));
   };
 
@@ -70,7 +67,9 @@ const NavBar = () => {
               {navItems}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">PlayHive</a>
+          <Link to="/" className="btn btn-ghost text-xl">
+            PlayHive
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold text-xl">
