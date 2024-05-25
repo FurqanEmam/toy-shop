@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -24,24 +25,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        const loggedUser = {
-          email: user.email,
-        };
-
-        fetch("http://localhost:5000/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(loggedUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log("jwt response: ", data);
-
-            localStorage.setItem("playhive-access-token", data.token);
-            navigate(from, { replace: true });
-          });
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log("error is : " + error));
   };
@@ -99,6 +83,7 @@ const Login = () => {
                   Sign Up
                 </Link>
               </p>
+              <SocialLogin></SocialLogin>
             </div>
           </div>
         </div>

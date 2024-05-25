@@ -1,19 +1,34 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import MyCart from "./MyCart";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { user } = useContext(AuthContext);
   // console.log(user);
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   const url = `http://localhost:5000/newsoldtoy?email=${user?.email}`;
 
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      method: "GET",
+      headers: {
+        authorization: `bearer ${localStorage.getItem(
+          "playhive-access-token"
+        )}`,
+      },
+    })
       .then((res) => res.json())
-      .then((data) => setCart(data));
-  }, []);
+      .then((data) => {
+        if (!data.error) {
+          setCart(data);
+        } else {
+          navigate("/");
+        }
+      });
+  }, [url, navigate]);
 
   const handleDelete = (id) => {
     const proceed = confirm("sure to delete");
