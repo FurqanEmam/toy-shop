@@ -12,7 +12,7 @@ const SocialLogin = () => {
   };
   return (
     <div>
-      <div className="divider divider-accent">or You Can Sign ins with</div>
+      <div className="divider divider-accent">or You Can Sign in with</div>
       <div className="text-center mb-4">
         <button
           onClick={handleGoogleSignIn}

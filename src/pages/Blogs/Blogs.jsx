@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import BlogsCard from "./BlogsCard";
 
 const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogs(data);
+      });
+  }, []);
   return (
     <div>
-      <h2>Blogs</h2>
+      {blogs.map((blog) => (
+        <BlogsCard key={blog._id} blog={blog}></BlogsCard>
+      ))}
     </div>
   );
 };

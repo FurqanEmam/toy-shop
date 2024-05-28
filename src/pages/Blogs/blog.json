@@ -1,0 +1,32 @@
+{
+  {
+    "question": "What is an access token and refresh token?",
+    "answer": "An access token is a credential used to access protected resources, while a refresh token is a credential used to obtain a new access token after the current access token expires.",
+    "imageUrl": "https://i.ibb.co/CWqTfW6/How-a-refresh-token-is-generated-and-used-1.png"
+  },
+  {
+    "question": "How do they work and where should we store them on the client-side?",
+    "answer": "Access tokens are typically sent along with requests to access protected resources, while refresh tokens are used to obtain new access tokens from the authorization server. Access tokens should be stored securely on the client-side, usually in memory or secure storage mechanisms such as HTTP cookies or browser's local storage.",
+    "imageUrl": "https://i.ibb.co/CWqTfW6/How-a-refresh-token-is-generated-and-used-1.png"
+  },
+  {
+    "question": "Compare SQL and NoSQL databases.",
+    "answer": "SQL databases are relational databases that use structured query language (SQL) for defining and manipulating data. They are table-based and have predefined schemas. NoSQL databases, on the other hand, are non-relational databases that use a variety of data models for accessing and managing data. They are more flexible and scalable than SQL databases and do not require a fixed schema.",
+    "imageUrl": "https://i.ibb.co/s3Gndv3/SQL-Vs-No-SQL1.png"
+  },
+  {
+    "question": "What is Express.js?",
+    "answer": "Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. It is designed for building web applications and APIs and is used for server-side development.",
+    "imageUrl": "https://i.ibb.co/ZgpdyXP/Apps-that-use-Express-js-as-a-backend-technology-2x.png"
+  },
+  {
+    "question": "What is Nest.js?",
+    "answer": "Nest.js is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It uses TypeScript and is built with a focus on developer productivity and maintainability. Nest.js leverages the power of TypeScript and combines elements of object-oriented programming, functional programming, and functional reactive programming.",
+    "imageUrl": "https://i.ibb.co/MBR79CZ/dribbble-szablon-1-1.png"
+  },
+  {
+    "question": "What is MongoDB aggregate and how does it work?",
+    "answer": "MongoDB aggregate is a method used for processing data and returning computed results. It allows you to perform aggregation operations such as grouping, filtering, and sorting on MongoDB collections. Aggregation pipelines consist of stages where each stage transforms the documents as they pass through the pipeline. MongoDB aggregate provides a powerful way to perform complex data processing and analysis.",
+    "imageUrl": "https://i.ibb.co/mh1PNJ1/mongodb-aggretion.png"
+  }
+}

@@ -1,16 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
-        <nav className="grid grid-flow-col gap-4">
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+      <footer className="footer p-10 bg-zinc-500 text-neutral-content">
+        <aside>
+          <img
+            className="w-24 h-auto"
+            src="https://i.ibb.co/Fspw4T5/logo-no-background.png"
+            alt="PlayHive Logo"
+          />
+          <p>
+            Playhive Industries Ltd.
+            <br />
+            Providing reliable toys for our beloved kids.
+          </p>
+          <p>Copyright © 2024 - All right reserved</p>
+        </aside>
+        <nav>
+          <a className="link link-hover">PlayHive</a>
+          <a className="link link-hover">About US</a>
+          <a className="link link-hover">Career</a>
+          <a className="link link-hover">Advertisement</a>
         </nav>
         <nav>
+          <h6 className="footer-title">Social</h6>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
@@ -47,9 +62,6 @@ const Footer = () => {
             </a>
           </div>
         </nav>
-        <aside>
-          <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
-        </aside>
       </footer>
     </div>
   );

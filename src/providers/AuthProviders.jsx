@@ -49,7 +49,7 @@ const AuthProviders = ({ children }) => {
         const loggedUser = {
           email: currentUser.email,
         };
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://toy-shop-server-production.up.railway.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

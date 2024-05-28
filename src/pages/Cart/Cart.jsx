@@ -9,7 +9,7 @@ const Cart = () => {
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
-  const url = `http://localhost:5000/newsoldtoy?email=${user?.email}`;
+  const url = `https://toy-shop-server-production.up.railway.app/newsoldtoy?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -33,9 +33,12 @@ const Cart = () => {
   const handleDelete = (id) => {
     const proceed = confirm("sure to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/newsoldtoy/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://toy-shop-server-production.up.railway.app/newsoldtoy/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -49,13 +52,16 @@ const Cart = () => {
   };
 
   const handleConfirm = (id) => {
-    fetch(`http://localhost:5000/newsoldtoy/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: "confirm" }),
-    })
+    fetch(
+      `https://toy-shop-server-production.up.railway.app/newsoldtoy/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ status: "confirm" }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

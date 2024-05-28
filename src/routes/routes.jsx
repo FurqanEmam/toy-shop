@@ -9,6 +9,8 @@ import Checkout from "../pages/Checkout/Checkout";
 import Cart from "../pages/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
 import Blogs from "../pages/Blogs/Blogs";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AddToy from "../pages/AddToy/AddToy";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
         path: "/blogs",
         element: <Blogs></Blogs>,
       },
+
       {
         path: "/login",
         element: <Login></Login>,
@@ -43,7 +46,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://toy-shop-server-production.up.railway.app/products/${params.id}`
+          ),
       },
       {
         path: "cart",
@@ -53,14 +58,28 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/addtoy",
+        element: (
+          <PrivateRoute>
+            <AddToy></AddToy>
+          </PrivateRoute>
+        ),
+      },
 
       {
         path: "checkout/:id",
         element: <Checkout></Checkout>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://toy-shop-server-production.up.railway.app/products/${params.id}`
+          ),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

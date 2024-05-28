@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login.jpg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
@@ -8,6 +8,7 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const from = location.state?.from?.pathname || "/";
 
@@ -27,7 +28,9 @@ const Login = () => {
         console.log(user);
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log("error is : " + error));
+      .catch((error) => {
+        setError("Error: " + error.message); // Set the error message
+      });
   };
   return (
     <div>
@@ -68,6 +71,17 @@ const Login = () => {
                       Forgot password?
                     </a>
                   </label>
+                  <div>
+                    {/* Display error message */}
+                    {error ? (
+                      <div className="text-red-500 text-center">
+                        Your email or password is wrong. Please login with valid
+                        credentials.
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
                 </div>
                 <div className="form-control mt-6">
                   <input

@@ -30,12 +30,23 @@ const NavBar = () => {
       ) : (
         <></>
       )}
+      {user?.email ? (
+        <>
+          <div>
+            <li>
+              <Link to="/addtoy">Add Toys</Link>
+            </li>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 
   const handleLogOut = () => {
     logout()
-      .then(localStorage.removeItem("playhive-access-token"))
+      .then()
       .catch((error) => console.log(error));
   };
 
@@ -67,6 +78,11 @@ const NavBar = () => {
               {navItems}
             </ul>
           </div>
+          <img
+            className="w-20 h-auto"
+            src="https://i.ibb.co/DkwJ6zy/logo-color.png"
+            alt="PlayHive Logo"
+          />
           <Link to="/" className="btn btn-ghost text-xl">
             PlayHive
           </Link>
