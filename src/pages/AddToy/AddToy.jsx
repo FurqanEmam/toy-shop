@@ -33,7 +33,7 @@ const AddToy = () => {
     };
     console.log(newToy);
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://toy-shop-server-production.up.railway.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
