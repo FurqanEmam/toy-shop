@@ -1,11 +1,58 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
 
-  const handleAddToy = () => {
-    console.log("handle add toy working");
+  const handleAddToy = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const address = form.address.value;
+    const email = user?.email;
+    const toyName = form.toyName.value;
+    const toyImgUrl = form.toyImgUrl.value;
+    const category = form.category.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const details = form.details.value;
+    const price = form.price.value;
+
+    const newToy = {
+      seller: name,
+      toy_name: toyName,
+      sub_category: category,
+      price: price,
+      available_quantity: quantity,
+      description: details,
+      image_url: toyImgUrl,
+      address,
+      rating,
+      seller_email: email,
+    };
+    console.log(newToy);
+
+    fetch("http://localhost:5000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          console.log("data inserted", newToy);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your Toy added to the PlayHive Shop.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
   return (
     <div>
@@ -69,7 +116,7 @@ const AddToy = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Price</span>
+                  <span className="label-text">Price ($)</span>
                 </label>
                 <input
                   type="text"
@@ -80,7 +127,7 @@ const AddToy = () => {
               </div>
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text">Address</span>
+                  <span className="label-text">Shop Address</span>
                 </label>
                 <input
                   type="text"
@@ -90,44 +137,54 @@ const AddToy = () => {
                   required
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Card Number</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="cardNumber"
-                    placeholder="1234 5678 9012 3456"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Expiration Date</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="expDate"
-                    placeholder="MM/YY"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
-              </div>
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text">CVV</span>
+                  <span className="label-text">Availabe Quantity (pieces)</span>
                 </label>
                 <input
                   type="text"
-                  name="cvv"
-                  placeholder="123"
-                  className="input input-bordered w-20"
+                  name="quantity"
+                  placeholder="100"
+                  className="input input-bordered w-full"
                   required
                 />
               </div>
+              <div className="form-control mt-4">
+                <label className="label">
+                  <span className="label-text">Category</span>
+                </label>
+                <input
+                  type="text"
+                  name="category"
+                  placeholder="Tango Car"
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div className="form-control mt-4">
+                <label className="label">
+                  <span className="label-text">Rating (Out of 10)</span>
+                </label>
+                <input
+                  type="text"
+                  name="rating"
+                  placeholder="8"
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Details Description</span>
+                </label>
+                <input
+                  type="text"
+                  name="details"
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+
               <div className="form-control mt-6">
                 <input
                   type="submit"
